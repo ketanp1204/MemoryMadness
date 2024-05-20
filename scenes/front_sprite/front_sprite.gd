@@ -25,7 +25,6 @@ func get_random_rotation() -> float:
 
 
 func run_me() -> void:
-	
 	var tween = get_tree().create_tween()
 	tween.set_loops()
 	tween.tween_callback(set_random_image)

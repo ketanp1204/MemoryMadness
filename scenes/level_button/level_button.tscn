@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqmbbxarc7bsb"]
+
+[ext_resource type="Texture2D" uid="uid://cwfta68lgjoi7" path="res://assets/ui/level_select_frame_128.png" id="1_ev6gk"]
+[ext_resource type="Texture2D" uid="uid://c544hj76vreun" path="res://assets/ui/level_select_frame_select_128.png" id="2_jj8yl"]
+[ext_resource type="Texture2D" uid="uid://eui60lynqe0f" path="res://assets/ui/level_select_frame_hover_128.png" id="3_6fh0m"]
+[ext_resource type="LabelSettings" uid="uid://dkyfihcw3klxs" path="res://assets/label_settings/gm_32_wh.tres" id="4_2yvo0"]
+[ext_resource type="Script" path="res://scenes/level_button/level_button.gd" id="4_seru6"]
+
+[sub_resource type="GDScript" id="GDScript_jy8fw"]
+script/source = "extends AudioStreamPlayer
+
+@onready var label = $\"../Label\"
+@onready var sound = $\".\"
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="LevelButton" type="TextureButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("1_ev6gk")
+texture_pressed = ExtResource("2_jj8yl")
+texture_hover = ExtResource("3_6fh0m")
+script = ExtResource("4_seru6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0x0"
+label_settings = ExtResource("4_2yvo0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+script = SubResource("GDScript_jy8fw")

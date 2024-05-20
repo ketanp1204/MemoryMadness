@@ -15,7 +15,6 @@ func _ready():
 
 
 func add_file_to_list(fn: String, path: String) -> void:
-	
 	var full_path = path + "/" + fn
 	
 	var ii_dict =  {
@@ -27,7 +26,6 @@ func add_file_to_list(fn: String, path: String) -> void:
 
 
 func load_item_images() -> void:
-	
 	var path = "res://assets/glitch"
 	var dir = DirAccess.open(path)
 	
