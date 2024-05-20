@@ -57,3 +57,5 @@ vertical_alignment = 1
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 script = SubResource("GDScript_jy8fw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
